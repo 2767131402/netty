@@ -21,11 +21,11 @@ public class ServerHandler extends CustomHeartbeatHandler {
     @Override
     protected void handleData(ChannelHandlerContext channelHandlerContext, Object msg) {
     	//测试用的。用来测试输出数据格式
-        System.out.println("server 接收数据:"+msg);
+        System.out.println("server 接收业务数据:"+msg);
     }
 
     /**
-     * read time out
+     * 读数空闲
      */
     @Override
     protected void handleReaderIdle(ChannelHandlerContext ctx) {

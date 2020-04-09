@@ -12,11 +12,11 @@ import java.util.Map;
 public final class TypeData {
 
 	/** 心跳包 PING命令 */
-	public static final int PING = 1;
+	public static final byte PING = 1;
 	/** 心跳包 PONG命令 */
-	public static final int PONG = 2;
+	public static final byte PONG = 2;
 	/** 非心跳包 逻辑处理 */
-	public static final int CUSTOME = 0;
+	public static final byte CUSTOME = 3;
 
 	/**成功 */
     public static final String OK = "OK";
@@ -24,6 +24,10 @@ public final class TypeData {
     public static final String SUCCESS = "SUCCESS";
     /**所有异常*/
     public static final Map<String, String> keyMap = new HashMap<String, String>();
+    /** 封装消息的 key。 data属性:数据 */
+    public static final String MESSAGE_DATA = "data";
+    /**封装消息的 key。 type:心跳/业务*/
+    public static final String MESSAGE_TYPE = "type";
 
     static {
         //保存所有出现的错误

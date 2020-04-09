@@ -24,7 +24,8 @@ public class ClientHandler extends CustomHeartbeatHandler {
      */
     @Override
     protected void handleData(ChannelHandlerContext channelHandlerContext, Object msg) {
-        channelHandlerContext.channel().writeAndFlush("来自" + name + "的问候");
+        System.out.println("客户端收到服务端的业务数据："+msg);
+        channelHandlerContext.channel().writeAndFlush("客户端接收数据成功");
     }
 
     /**

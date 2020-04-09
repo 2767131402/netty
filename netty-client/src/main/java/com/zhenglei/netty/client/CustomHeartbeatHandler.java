@@ -1,5 +1,6 @@
 package com.zhenglei.netty.client;
 
+import com.alibaba.fastjson.JSONObject;
 import com.zhenglei.netty.constant.TypeData;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -28,8 +29,10 @@ public abstract class CustomHeartbeatHandler extends ChannelInboundHandlerAdapte
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-    	Integer i = Integer.parseInt(msg.toString());
-        switch (i){
+        JSONObject json = JSONObject.parseObject(msg.toString());
+        //获取type属性
+        int type = json.getInteger(TypeData.MESSAGE_TYPE);
+        switch (type){
             case TypeData.PING://心跳包 发送PONG 命令
                 sendPongMsg(ctx);
                 break;
@@ -37,7 +40,7 @@ public abstract class CustomHeartbeatHandler extends ChannelInboundHandlerAdapte
                 System.out.println(name + " get pong msg from " + ctx.channel().remoteAddress());
                 break;
             case TypeData.CUSTOME:
-            	handleData(ctx, msg);//处理业务逻辑--推送
+            	handleData(ctx, json.get(TypeData.MESSAGE_DATA));//处理业务逻辑--推送
                 break;
         }
 
