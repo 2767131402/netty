@@ -25,13 +25,14 @@ public class ServerHandler extends CustomHeartbeatHandler {
     }
 
     /**
-     * 读数空闲
+     * 读数空闲将连接断开，释放空间
+     * 注：客户端可能存在卡或者突然宕机情况导致连接并未断开占用资源。
      */
     @Override
     protected void handleReaderIdle(ChannelHandlerContext ctx) {
         super.handleReaderIdle(ctx);
         log.info("服务端长时间未收到客户端 "+ctx.channel().remoteAddress().toString()+" 数据");
-//        ctx.close();
+        ctx.close();
     }
 
     /**
