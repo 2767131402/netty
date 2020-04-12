@@ -36,7 +36,7 @@ public class ServerHandler extends CustomHeartbeatHandler {
     }
 
     /**
-         * 异常情况（服务端）<br>
+     * 异常情况（服务端）<br>
      */
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
