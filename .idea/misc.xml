@@ -9,7 +9,10 @@
         <option value="$PROJECT_DIR$/netty-client/pom.xml" />
         <option value="$PROJECT_DIR$/netty-server/pom.xml" />
         <option value="$PROJECT_DIR$/netty-client2/pom.xml" />
+        <option value="$PROJECT_DIR$/netty-client-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/netty-client-starter-test/pom.xml" />
       </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

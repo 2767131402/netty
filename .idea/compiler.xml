@@ -8,11 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="netty-client" />
         <module name="netty-server" />
+        <module name="netty-client-starter-test" />
         <module name="netty-client2" />
+        <module name="netty-client-starter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="netty-client" target="1.8" />
+      <module name="netty-client-starter" target="1.8" />
+      <module name="netty-client-starter-test" target="1.8" />
       <module name="netty-client2" target="1.8" />
       <module name="netty-server" target="1.8" />
     </bytecodeTargetLevel>
@@ -20,6 +24,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="netty-client" options="-parameters" />
+      <module name="netty-client-starter" options="-parameters" />
+      <module name="netty-client-starter-test" options="-parameters" />
       <module name="netty-client2" options="-parameters" />
       <module name="netty-server" options="-parameters" />
     </option>
