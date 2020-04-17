@@ -12,3 +12,7 @@ demo中数据传输格式如下：
 
 type为 心跳包/业务数据
 *数据的封装在code包下，封装是在编码和解码过程中自动封装数据格式*
+
+-----------------------------------------
+netty-client-starter 项目: 是将客户端 制作一个starter
+netty-client-starter-test：为stater的测试
