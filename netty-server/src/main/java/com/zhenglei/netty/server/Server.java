@@ -45,7 +45,7 @@ public class Server {
                     //允许启动一个监听服务器并捆绑其众所周知端口
                     .option(ChannelOption.SO_REUSEADDR, true)
                     // 连接数
-                    .option(ChannelOption.SO_BACKLOG, 128)
+                    .option(ChannelOption.SO_BACKLOG, 1000)
                     // 长连接
                     .childOption(ChannelOption.SO_KEEPALIVE, true)
                     // 不延迟，消息立即发送
