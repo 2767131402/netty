@@ -60,7 +60,7 @@ public class Client {
     }
 
     /**
-     * 1.重连机制,每隔2s重新连接一次服务器
+     * 1.重连机制,每隔10s重新连接一次服务器
      */
     protected void doConnect() {
         if (channel != null && channel.isActive()) {
@@ -75,7 +75,7 @@ public class Client {
                     channel = futureListener.channel();
                     log.info(host+":"+port+" 链接成功");
                 } else {
-                	log.error(host+":"+port+" 链接失败，正在重连....");
+                	log.error(host+":"+port+" 链接失败，原因：" + futureListener.cause().getMessage() + " 正在重连....");
                     futureListener.channel().eventLoop().schedule(new Runnable() {
                         @Override
                         public void run() {

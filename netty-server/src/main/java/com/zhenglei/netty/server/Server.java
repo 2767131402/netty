@@ -41,10 +41,10 @@ public class Server {
                     .channel(NioServerSocketChannel.class)
                     //日志级别
                     //.handler(new LoggingHandler(LogLevel.INFO))
-			
+
                     //允许启动一个监听服务器并捆绑其众所周知端口
                     .option(ChannelOption.SO_REUSEADDR, true)
-                    // 连接数
+                    // （连接数） 服务端接受连接的队列长度，如果队列已满，客户端连接将被拒绝
                     .option(ChannelOption.SO_BACKLOG, 1000)
                     // 长连接
                     .childOption(ChannelOption.SO_KEEPALIVE, true)

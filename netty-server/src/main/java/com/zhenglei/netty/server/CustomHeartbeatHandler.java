@@ -64,10 +64,10 @@ public abstract class CustomHeartbeatHandler extends ChannelInboundHandlerAdapte
 
     /**
      * 非心跳包。处理业务逻辑
-     * @param channelHandlerContext 用于传输业务数据
+     * @param ctx 用于传输业务数据
      * @param msg 数据
      */
-    protected abstract void handleData(ChannelHandlerContext channelHandlerContext, Object msg);
+    protected abstract void handleData(ChannelHandlerContext ctx, Object msg);
 
     /**
      * 心跳和重连的整个过程：
